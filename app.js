@@ -10,13 +10,36 @@ app.configure(function() {
  * POST Validate - Var
  */
 app.post('/validate/var', function(req, res){
-	var word = req.param('word');
+	// string is the sting that needs to be check
+	var string = req.param('string');
 
-	if(spamChecker(word)){
+	// type can be 'full' or 'part'
+	// full - the full sting has to match the full spam word
+	// part - only part of the sting has to match the full spam word
+	var type = req.param('type');
+
+	// no string? reture false
+	if((validateVar(string))) {
+		res.json({
+			success: false,
+			error: 'no string input'
+		});
+		return;
+	};
+
+	// no type? set type to part
+	if((validateVar(type))) {
+		type = 'part';
+	};
+
+	// run the check!
+	if(spamChecker(string, type)){
+		// valid!
 		res.json({
 			success: true
 		});
 	} else {
+		// invalid!
 		res.json({
 			success: false,
 			error: 'failed spam check'
@@ -25,9 +48,24 @@ app.post('/validate/var', function(req, res){
 	return;
 });
 
-spamChecker  = function(word){
-	console.log("spam function word:", word);
-	if(word != 'poop'){
+spamChecker  = function(string, type){
+	if(type.indexOf('full') != -1) {
+		if(string != 'poop'){
+			return true;
+		} else {
+			return false;
+		};
+	} else {
+		if(string.indexOf('poop') != -1){
+			return false;
+		} else {
+			return true;
+		};
+	};
+};
+
+validateVar = function(inputVar, callback) {
+	if ( inputVar == null || inputVar.length < 1 || typeof inputVar === 'undefined' || !inputVar) {
 		return true;
 	} else {
 		return false;
