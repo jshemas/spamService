@@ -6,10 +6,10 @@ console.log("Starting Tests");
 
 //sometimes error don't show in the log...
 //http://stackoverflow.com/questions/8794008/no-stack-trace-for-jasmine-node-errors
-process.on('uncaughtException',function(e) {
-	console.log("Caught unhandled exception: " + e);
-	console.log(" ---> : " + e.stack);
-});
+// process.on('uncaughtException',function(e) {
+// 	console.log("Caught unhandled exception: " + e);
+// 	console.log(" ---> : " + e.stack);
+// });
 
 //empty value 
 var empty = '';

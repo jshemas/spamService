@@ -52,20 +52,12 @@ app.post('/validate/var', function(req, res){
 
 //return false if test fails(word is spam)
 spamChecker  = function(string, type){
-	if(type.indexOf('full') != -1) {
-		for (var i = 0; i < spamArr.length; i++) {
-			if(string == spamArr[i]){
-				return false;
-			}
-		};
-		return true;
-	} else {
-		if(string.indexOf('poop') != -1){
+	for (var i = 0; i < spamArr.length; i++) {
+		if((type.indexOf('full') != -1 && string == spamArr[i])||(string.indexOf(type.indexOf('full') == -1 && spamArr[i]) != -1)){
 			return false;
-		} else {
-			return true;
-		};
+		}
 	};
+	return true;
 };
 
 validateVar = function(inputVar, callback) {
