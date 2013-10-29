@@ -1,5 +1,5 @@
 var express = require('express'),
-	app = express();
+	app = module.exports = express();
 
 // configure Express
 app.configure(function() {
