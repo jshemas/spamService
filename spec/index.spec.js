@@ -30,7 +30,7 @@ var string2 = 'poop',
 
 
 describe('POST - validate/var:', function (done) {
-	it('good var', function(done) {
+	it('general test - return true', function(done) {
 		request(app)
 			.post('/validate/var?string='+test)
 			.end( function(err, result) {
@@ -39,7 +39,7 @@ describe('POST - validate/var:', function (done) {
 				done();
 			});
 	});
-	it('good var - used string 1 - no type', function(done) {
+	it('good var - used string 1 - no type - return true', function(done) {
 		request(app)
 			.post('/validate/var?string='+string1)
 			.end( function(err, result) {
@@ -48,7 +48,7 @@ describe('POST - validate/var:', function (done) {
 				done();
 			});
 	});
-	it('good var - used string 1 - type set to full', function(done) {
+	it('good var - used string 1 - type set to full - return true', function(done) {
 		request(app)
 			.post('/validate/var?string='+string1+'&type='+typeF)
 			.end( function(err, result) {
@@ -57,7 +57,7 @@ describe('POST - validate/var:', function (done) {
 				done();
 			});
 	});
-	it('good var - used string 1 - type set to part', function(done) {
+	it('good var - used string 1 - type set to part - return true', function(done) {
 		request(app)
 			.post('/validate/var?string='+string1+'&type='+typeP)
 			.end( function(err, result) {
@@ -66,7 +66,7 @@ describe('POST - validate/var:', function (done) {
 				done();
 			});
 	});
-	it('good var - used string 1 - type set to test', function(done) {
+	it('good var - used string 1 - type set to test - return true', function(done) {
 		request(app)
 			.post('/validate/var?string='+string1+'&type='+test)
 			.end( function(err, result) {
@@ -75,7 +75,7 @@ describe('POST - validate/var:', function (done) {
 				done();
 			});
 	});
-	it('bad var - no input', function(done) {
+	it('bad var - no input - return false', function(done) {
 		request(app)
 			.post('/validate/var?string='+empty)
 			.end( function(err, result) {
@@ -84,7 +84,7 @@ describe('POST - validate/var:', function (done) {
 				done();
 			});
 	});
-	it('bad var - used string 2 - no type', function(done) {
+	it('bad var - used string 2 - no type - return false', function(done) {
 		request(app)
 			.post('/validate/var?string='+string2)
 			.end( function(err, result) {
@@ -93,7 +93,7 @@ describe('POST - validate/var:', function (done) {
 				done();
 			});
 	});
-	it('bad var - used string 2 - type full', function(done) {
+	it('bad var - used string 2 - type full - return false', function(done) {
 		request(app)
 			.post('/validate/var?string='+string2+'&type='+typeF)
 			.end( function(err, result) {
@@ -102,7 +102,7 @@ describe('POST - validate/var:', function (done) {
 				done();
 			});
 	});
-	it('bad var - used string 2 - type part', function(done) {
+	it('bad var - used string 2 - type part - return false', function(done) {
 		request(app)
 			.post('/validate/var?string='+string2+'&type='+typeP)
 			.end( function(err, result) {
@@ -111,7 +111,16 @@ describe('POST - validate/var:', function (done) {
 				done();
 			});
 	});
-	it('good var - used string 3 - type full', function(done) {
+	it('bad var - used string 3 - no type  - return false', function(done) {
+		request(app)
+			.post('/validate/var?string='+string3)
+			.end( function(err, result) {
+				expect(result.res.statusCode).to.be(200);
+				expect(result.res.body.success).to.be(false);
+				done();
+			});
+	});
+	it('good var - used string 3 - type full - return true', function(done) {
 		request(app)
 			.post('/validate/var?string='+string3+'&type='+typeF)
 			.end( function(err, result) {
@@ -120,7 +129,7 @@ describe('POST - validate/var:', function (done) {
 				done();
 			});
 	});
-	it('bad var - used string 3 - type part', function(done) {
+	it('bad var - used string 3 - type part - return false', function(done) {
 		request(app)
 			.post('/validate/var?string='+string3+'&type='+typeP)
 			.end( function(err, result) {
@@ -129,7 +138,7 @@ describe('POST - validate/var:', function (done) {
 				done();
 			});
 	});
-	it('no var', function(done) {
+	it('no var - return false', function(done) {
 		request(app)
 			.post('/validate/var')
 			.end( function(err, result) {
