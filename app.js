@@ -6,6 +6,8 @@ app.configure(function() {
 	app.use(app.router);
 });
 
+var spamArr = ['bad','words','here','poop'];
+
 /*
  * POST Validate - Var
  */
@@ -48,13 +50,15 @@ app.post('/validate/var', function(req, res){
 	return;
 });
 
+//return false if test fails(word is spam)
 spamChecker  = function(string, type){
 	if(type.indexOf('full') != -1) {
-		if(string != 'poop'){
-			return true;
-		} else {
-			return false;
+		for (var i = 0; i < spamArr.length; i++) {
+			if(string == spamArr[i]){
+				return false;
+			}
 		};
+		return true;
 	} else {
 		if(string.indexOf('poop') != -1){
 			return false;
