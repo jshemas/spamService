@@ -1,13 +1,28 @@
 {
-	"name": "spamService",
-	"description": "Node.js web service for checking for spam words",
-	"version": "0.1.0",
+	"name": "spam-check",
+	"description": "Module for checking for spam words",
+	"version": "0.9.5",
+	"license": "MIT",
+	"main": "app.js",
 	"author": {
-		"name": "Josh Shemas"
+		"name" : "Josh Shemas",
+		"email" : "jshemas1@gmail.com",
+		"url" : "https://github.com/jshemas"
 	},
-	"dependencies": {
-		"express": "3.2.6",
-		"supertest": "0.7.0",
-		"expect.js": "0.2.0"
-	}
+	"devDependencies": {
+		"expect.js": "0.2.0",
+		"mocha": "1.13.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/jshemas/spamService.git",
+		"web" : "http://github.com/jshemas/spamService"
+	},
+	"keywords": [
+		"spam check",
+		"spamcheck",
+		"spam",
+		"check",
+		"spammer"
+	]
 }

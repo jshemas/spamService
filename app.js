@@ -1,54 +1,43 @@
-var express = require('express'),
-	app = module.exports = express();
-
-// configure Express
-app.configure(function() {
-	app.use(app.router);
-});
+module.exports = function(options, callback){
+	exports.checkSpam(options, function(err,results){
+		callback(err,results);
+	});
+};
 
 var spamArr = ['bad','words','here','poop'];
 
 /*
- * POST Validate - Var
+ * check spam
+ * @param string url - user input of a string
+ * @param function callback
  */
-app.post('/validate/var', function(req, res){
+exports.checkSpam = function(options, callback){
 	// string is the sting that needs to be check
-	var string = req.param('string');
+	var string = options.string;
 
 	// type can be 'full' or 'part'
 	// full - the full sting has to match the full spam word
 	// part - only part of the sting has to match the full spam word
-	var type = req.param('type');
+	var type = options.type;
 
 	// no string? reture false
 	if((validateVar(string))) {
-		res.json({
-			success: false,
-			error: 'no string input'
-		});
-		return;
-	};
-
-	// no type? set type to part
-	if((validateVar(type))) {
-		type = 'part';
-	};
-
-	// run the check!
-	if(spamChecker(string, type)){
-		// valid!
-		res.json({
-			success: true
-		});
+		callback(true,{error: 'No String Input'});
 	} else {
-		// invalid!
-		res.json({
-			success: false,
-			error: 'failed spam check'
-		});
-	};
-	return;
-});
+		// no type? set type to part
+		if((validateVar(type))) {
+			type = 'part';
+		};
+		// run the check!
+		if(spamChecker(string, type)){
+			// valid!
+			callback(false,{spam: false});
+		} else {
+			// invalid!
+			callback(false,{spam: true});
+		};
+	}
+};
 
 //return false if test fails(word is spam)
 spamChecker  = function(string, type){
@@ -67,7 +56,3 @@ validateVar = function(inputVar, callback) {
 		return false;
 	};
 };
-
-// run on port 8080
-app.listen(8080);
-console.log("Server Running!");
