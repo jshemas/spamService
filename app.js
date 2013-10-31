@@ -1,10 +1,10 @@
+var spamArr = require('./spam.json');
+
 module.exports = function(options, callback){
 	exports.checkSpam(options, function(err,results){
 		callback(err,results);
 	});
 };
-
-var spamArr = ['bad','words','here','poop'];
 
 /*
  * check spam
