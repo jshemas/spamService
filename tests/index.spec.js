@@ -18,6 +18,10 @@ var string1 = 'joeSmith';
 var string2 = 'poop',
 	string3 = 'partofpoop';
 
+// some more tests
+var string4 = 'the man likes to poop',
+	string5 = 'what happens if I say poop and then I say poop again';
+
 // what's being passed
 var options1 = {'string':'test'},
 	options2 = {'string':string1},
@@ -30,7 +34,9 @@ var options1 = {'string':'test'},
 	options9 = {'string':string2,'type':typeP},
 	options10 = {'string':string3},
 	options11 = {'string':string3,'type':typeF},
-	options12 = {'string':string3,'type':typeP};
+	options12 = {'string':string3,'type':typeP},
+	options13 = {'string':string4},
+	options14 = {'string':string5};
 
 
 describe('SpamCheck: ', function (done) {
@@ -118,4 +124,18 @@ describe('SpamCheck: ', function (done) {
 			done();
 		});
 	});
+	it('bad var - used string 4 - return false', function(done) {
+		app(options13, function(err, result){
+			expect(err).to.be(false)
+			expect(result.spam).to.be(true);
+			done();
+		});
+	});
+	it('bad var - used string 5 - return false', function(done) {
+		app(options14, function(err, result){
+			expect(err).to.be(false)
+			expect(result.spam).to.be(true);
+			done();
+		});
+	});	
 });

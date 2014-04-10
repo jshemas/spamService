@@ -2,7 +2,7 @@ spamService
 ==============
 [![Build Status](https://travis-ci.org/jshemas/spamService.png?branch=master)](https://travis-ci.org/jshemas/spamService)
 
-A simple node module for checking for spam in user inputs.
+A simple node module for checking for spam in user inputs. This module comes with a full list of spam words!
 
 ### Installation
 ```
@@ -28,7 +28,7 @@ spamCheck(options, function(err, results) {
 });
 ```
 
-### Resulte JSON
+### Resulte
 Check the return for a ```err``` flag. If err is set to true, then the input was invalid. Otherwise it will be set to false. The above eample will return something like...
 ```
 { spam: true }
@@ -57,7 +57,7 @@ make test
 
 (The MIT License)
 
-Copyright (c) 2013 Josh Shemas
+Copyright (c) 2014 Josh Shemas
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
