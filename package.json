@@ -1,12 +1,12 @@
 {
 	"name": "spam-check",
 	"description": "Module for checking for spam words",
-	"version": "0.9.9",
+	"version": "0.9.10",
 	"license": "MIT",
 	"main": "app.js",
 	"author": {
 		"name" : "Josh Shemas",
-		"email" : "jshemas1@gmail.com",
+		"email" : "jjs90jjs@gmail.com",
 		"url" : "https://github.com/jshemas"
 	},
 	"devDependencies": {
