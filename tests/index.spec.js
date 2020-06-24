@@ -38,7 +38,6 @@ const options12 = { string: string3, type: typeP };
 const options13 = { string: string4 };
 const options14 = { string: string5 };
 
-console.log('jejejej');
 describe('SpamCheck: ', function () {
   it('general test - return true', function (done) {
     app(options1, function (err, result) {
