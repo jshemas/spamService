@@ -38,7 +38,7 @@ var options1 = {'string':'test'},
 	options13 = {'string':string4},
 	options14 = {'string':string5};
 
-
+console.log('jejejej')
 describe('SpamCheck: ', function (done) {
 	it('general test - return true', function(done) {
 		app(options1, function(err, result){

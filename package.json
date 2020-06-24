@@ -5,18 +5,21 @@
 	"license": "MIT",
 	"main": "app.js",
 	"author": {
-		"name" : "Josh Shemas",
-		"email" : "jjs90jjs@gmail.com",
-		"url" : "https://github.com/jshemas"
+		"name": "Josh Shemas",
+		"email": "jjs90jjs@gmail.com",
+		"url": "https://github.com/jshemas"
+	},
+	"scripts": {
+		"test": "mocha ./tests/index.spec.js"
 	},
 	"devDependencies": {
-		"expect.js": "0.2.0",
-		"mocha": "1.13.0"
+		"expect.js": "0.3.1",
+		"mocha": "8.0.1"
 	},
 	"repository": {
 		"type": "git",
 		"url": "http://github.com/jshemas/spamService.git",
-		"web" : "http://github.com/jshemas/spamService"
+		"web": "http://github.com/jshemas/spamService"
 	},
 	"keywords": [
 		"spam check",
