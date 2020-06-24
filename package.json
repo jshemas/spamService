@@ -1,7 +1,7 @@
 {
 	"name": "spam-check",
 	"description": "Module for checking for spam words",
-	"version": "0.9.10",
+	"version": "1.0.0",
 	"license": "MIT",
 	"main": "app.js",
 	"author": {
