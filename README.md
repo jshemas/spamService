@@ -1,6 +1,7 @@
 spamService
 ==============
-[![Build Status](https://travis-ci.org/jshemas/spamService.png?branch=master)](https://travis-ci.org/jshemas/spamService)
+[![Node.js CI](https://github.com/jshemas/spamService/workflows/Node.js%20CI/badge.svg?branch=master)](https://github.com/jshemas/spamService/actions?query=branch%3Amaster)
+[![Known Vulnerabilities](https://snyk.io/test/github/jshemas/spamService/badge.svg)](https://snyk.io/test/github/jshemas/spamService)
 
 A simple node module for checking for spam in user inputs. This module comes with a full list of spam words!
 
