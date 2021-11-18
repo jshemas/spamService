@@ -33,8 +33,8 @@ exports.checkSpam = (options, callback) => {
   const { string } = options;
 
   // type can be 'full' or 'part'
-  // full - the full sting has to match the full spam word
-  // part - only part of the sting has to match the full spam word
+  // full - the full string has to match the full spam word
+  // part - only part of the string has to match the full spam word
   let { type } = options;
 
   // no string? reture false
