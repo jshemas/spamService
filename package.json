@@ -1,20 +1,20 @@
 {
-	"name": "spam-check",
-	"description": "Module for checking for spam words",
-	"version": "1.0.0",
-	"license": "MIT",
-	"main": "app.js",
-	"author": {
-		"name": "Josh Shemas",
-		"email": "jjs90jjs@gmail.com",
-		"url": "https://github.com/jshemas"
-	},
-	"scripts": {
+  "name": "spam-check",
+  "description": "Module for checking for spam words",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "app.js",
+  "author": {
+    "name": "Josh Shemas",
+    "email": "jjs90jjs@gmail.com",
+    "url": "https://github.com/jshemas"
+  },
+  "scripts": {
     "eslint:fix": "eslint . --ext .js --fix",
     "eslint": "eslint . --ext .js",
-		"test": "mocha ./tests/index.spec.js"
-	},
-	"devDependencies": {
+    "test": "mocha ./tests/index.spec.js"
+  },
+  "devDependencies": {
     "@babel/core": "^7.20.5",
     "@babel/eslint-parser": "^7.19.1",
     "eslint": "^8.29.0",
@@ -22,19 +22,19 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-mocha": "^10.1.0",
     "eslint-plugin-promise": "^6.1.1",
-		"expect.js": "^0.3.1",
-		"mocha": "^10.2.0"
-	},
-	"repository": {
-		"type": "git",
-		"url": "http://github.com/jshemas/spamService.git",
-		"web": "http://github.com/jshemas/spamService"
-	},
-	"keywords": [
-		"spam check",
-		"spamcheck",
-		"spam",
-		"profanity",
-		"spammer"
-	]
+    "expect.js": "^0.3.1",
+    "mocha": "^10.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jshemas/spamService.git",
+    "web": "http://github.com/jshemas/spamService"
+  },
+  "keywords": [
+    "spam check",
+    "spamcheck",
+    "spam",
+    "profanity",
+    "spammer"
+  ]
 }
